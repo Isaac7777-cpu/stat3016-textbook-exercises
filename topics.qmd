@@ -1,0 +1,37 @@
+---
+title: "STAT2001 Weekly Topics"
+format: html
+page-layout: full
+---
+
+## 📘 Weekly Topics Overview
+
+This page summarizes the weekly structure of STAT2001: Introductory Mathematical Statistics, including chapter coverage and additional notes. Use this as a guide to plan your revision and track key assessments and resources.
+
+---
+
+| **Week** | **Topic**                              | **Extra Information**                                                                 |
+|----------|----------------------------------------|----------------------------------------------------------------------------------------|
+| 1        | CH1 Statistics; CH2 Probability        | Calculus notes                                                                        |
+| 2        | CH2 Probability                        | Refresher Quiz 1, Refresher Quiz 2 on combinatorics                                   |
+| 3        | CH2 Probability                        |                                                                                        |
+| 4        | CH3 Discrete Random Variables          | Makeup Tue 11/3, Formula sheet, Binomial distribution                                  |
+| 5        | CH4 Continuous Random Variables        | Assessable Quiz due Fri 21/3, Gamma distribution, R and random variables               |
+| 6        | CH5 Multivariate Probability           | Assignment 1 available                                                                 |
+| —        | **Teaching Break**                     |                                                                                        |
+| 7        | CH6 Functions of Random Variables      | Assignment 1 due                                                                       |
+| 8        | CH7 Sampling Distributions & CLT       | Makeup Tue 22/4                                                                        |
+| 9*       | CH8 Estimation                         | Assignment 2 available                                                                 |
+| 10      | CH9 Point Estimation                   |                                                                                        |
+| 11      | CH16 Bayesian Methods; CH10            | Assignment 2 due                                                                       |
+| 12      | CH10 Hypothesis Testing                | Non-exhaustive summary                                                                 |
+
+: Weekly Study Plan {.striped .hover}
+
+---
+
+### 📌 Notes
+
+- Chapters refer to the textbook used in the course (check Wattle or course outline for details).
+- Makeups and assignments are based on 2025 dates; confirm current year’s schedule on Wattle.
+- This schedule is intended for student revision and is not officially endorsed by ANU.

@@ -1,0 +1,43 @@
+---
+title: "STAT2001 Revision Hub"
+format: html
+page-layout: full
+---
+
+# 📊 Welcome to the STAT2001 Revision Hub
+
+This site is your companion for revising **STAT2001: Introductory Mathematical Statistics** at ANU. Whether you're preparing for exams or reinforcing weekly concepts, you'll find concise summaries, worked examples, and practice materials here.
+
+---
+
+## 📚 Topics Covered
+
+The content is structured to mirror the STAT2001 curriculum:
+
+- **Probability Foundations**: Set theory, combinatorics, and Bayes' theorem.
+- **Random Variables**: Discrete and continuous distributions, including moment-generating functions and correlation.
+- **Multivariate Distributions**: Joint, marginal, and conditional distributions.
+- **Sampling Distributions**: Understanding the central limit theorem and its applications.
+- **Estimation Techniques**: Methods of moments and maximum likelihood estimation.
+- **Hypothesis Testing**: Formulating and testing statistical hypotheses.
+- **Bayesian Statistics**: Introduction to Bayesian inference and estimators.
+
+---
+
+## 🛠️ Tools and Resources
+
+All examples and exercises are implemented using **R**, the primary statistical computing tool for this course. You'll also find:
+
+- Interactive visualizations to aid understanding.
+- Cheatsheets summarizing key formulas and concepts.
+- Practice questions with step-by-step solutions.
+
+---
+
+## 📌 Getting Started
+
+Navigate to the [Topics](topics.qmd) page to begin exploring specific areas of the course. For more information about this site, visit the [About](about.qmd) page.
+
+---
+
+*Note: This site is an independent student-led initiative and is not officially affiliated with ANU.*

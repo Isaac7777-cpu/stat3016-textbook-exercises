@@ -1,0 +1,71 @@
+project:
+  type: website
+
+website:
+  title: "STAT3016 -- Intro to Bayesian Data Analysis"
+  repo-url: https://github.com/Isaac7777-cpu/stat3016-textbook-exercises
+  repo-actions: [edit, source, issue]
+  repo-branch: master
+  page-navigation: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - topics.qmd
+  sidebar:
+    style: "docked"
+    background: dark
+    collapse-level: 1
+    contents:
+  page-footer:
+    left: "Copyright 2025, Isaac Leong"
+    right:
+      - icon: github
+        href: https://github.com/Isaac7777-cpu/stat2001-summaries
+      - icon: linkedin
+        href: https://www.linkedin.com/in/isaac-leong-40b3b6276?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BQ7KeJzrBS6Kd8acL8AxrAw%3D%3D
+format:
+  html:
+    include-in-header: 
+      - scripts/mathjax.html
+      - scripts/mathjax-macros.html  # this is auto-generated macro extension
+    respect-user-color-scheme: true
+    theme:
+      light:
+        - lux
+        - brand
+        - scripts/style/styles.scss
+      dark:
+        - cyborg
+        - brand
+        - scripts/style/custom-dark.scss
+        - scripts/style/styles.scss
+    css: scripts/style/styles.css
+    toc: true
+    toc-expand: 1
+    number-sections: true
+    fig-align: center
+    code-fold: true
+    code-summary: "Show the code"
+    code-results: hold
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+    page-layout: article
+    date: last-modified
+    date-format: "dddd MMM D, YYYY"
+format-links: true
+
+comments: 
+  hypothesis: 
+    theme: classic
+
+execute: 
+  freeze: auto
+  cache: true
+
+scripts:
+  pre-render: scripts/convert_macros.sh
+    

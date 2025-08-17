@@ -1,0 +1,20 @@
+---
+title: "Contact"
+format: html
+page-layout: full
+---
+
+## 📬 Contact
+
+![An unrelated photo that I think tastes pretty good](./assets/me.jpg){width=150px}[^1]
+
+---
+
+### My Details
+
+- **📧 Email:** isaac.leong@example.com  
+- **💼 LinkedIn:** [linkedin.com/in/isaac-leong](https://www.linkedin.com/in/isaac-leong)  
+- **🧑‍💻 GitHub:** [github.com/Isaac7777-cpu](https://github.com/Isaac7777-cpu)  
+- **📍 Location:** Canberra, Australia  
+
+[^1]: This is just an unrelated photo that I think tastes pretty good.

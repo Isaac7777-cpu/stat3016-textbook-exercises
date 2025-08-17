@@ -1,0 +1,28 @@
+/*-- scss:rules --*/
+
+.theorem-title strong, 
+.theorem-title b {
+  font-weight: bold !important;
+  background-color: rgba(var(--bs-warning-rgb), 0.2); // soft amber, respects theme
+  color: inherit;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 1.05em;
+}
+
+.proof-title {
+  background-color: rgba(var(--bs-warning-rgb), 0.2); // soft amber, respects theme
+  color: inherit;
+  padding: 1px 2px;
+  border-radius: 4px;
+  font-size: 1.03em;
+}
+
+blockquote {
+  color: var(--bs-light-color) !important;
+  background-color: rgba(255, 255, 255, 0.02); // very subtle highlight (works in dark and light)
+  border-left: 4px solid var(--bs-warning);   // optional: highlight stripe
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}

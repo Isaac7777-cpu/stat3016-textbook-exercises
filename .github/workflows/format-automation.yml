@@ -1,0 +1,96 @@
+name: Auto Formatter
+permissions: 
+  contents: write
+
+on:
+  push:
+    paths:
+      - 'contents/**'
+      - 'scripts/grab_contents.sh'
+      - 'scripts/grab_contents_v2.sh'
+      - 'scripts/edit-quarto-yaml.sh'
+      - '_quarto.yml'
+
+jobs:
+  import-macros:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Make Script Runnable and Run Import
+        run: |
+          chmod +x scripts/convert_macros.sh
+          bash scripts/convert_macros.sh
+
+      - name: Commit and push if sidebar changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git pull --ff-only
+          git add scripts/mathjax-macros.html
+          git commit -m "Auto-import macros from _macros.tex/" || echo "Nothing to commit"
+          git push origin HEAD
+
+  update-sidebar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Make script executable and run sidebar update
+        run: |
+          chmod +x scripts/grab_contents_v2.sh
+          chmod +x scripts/edit-quarto-yaml.sh
+          mkdir -p __autogen
+          bash scripts/edit-quarto-yaml.sh > __autogen/sidebar.log 2>&1
+          if [ -f __autogen/sidebar-changed.flag ]; then
+            echo "sidebar_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "sidebar_changed=false" >> "$GITHUB_OUTPUT"
+          fi
+        id: update_sidebar
+
+      - name: Commit and push if sidebar changed
+        if: steps.update_sidebar.outputs.sidebar_changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git pull --ff-only
+          git add _quarto.yml
+          git commit -m "Auto-update sidebar from contents/" || echo "Nothing to commit"
+          git push origin HEAD
+
+      - name: Cleanup marker
+        if: steps.update_sidebar.outputs.sidebar_changed == 'true'
+        run: rm -f __autogen/sidebar-changed.flag
+
+      - name: Compress __autogen output
+        if: steps.update_sidebar.outputs.sidebar_changed == 'true'
+        run: |
+          zip -r sidebar-autogen.zip __autogen/
+
+      - name: Upload sidebar artifacts
+        if: steps.update_sidebar.outputs.sidebar_changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sidebar-autogen
+          path: "sidebar-autogen.zip"
+          retention-days: 7

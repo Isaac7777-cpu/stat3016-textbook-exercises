@@ -1,0 +1,52 @@
+% macros.tex — personal LaTeX macros for probability/statistics
+% Works with LaTeX PDF documents; for Quarto/MathJax use JSON-style equivalents
+
+%%%% 1. Common Metrics & Operators %%%%
+\newcommand{\P}[1]{\mathbb{P}\!\left({#1}\right)}               % Probability
+\newcommand{\E}[1]{\mathbb{E}\!\left[{#1}\right]}                  % Expectation
+\newcommand{\PCond}[2]{\mathbb{P}\!\left({#1}\middle\vert{#2}\right)}               % Probability
+\newcommand{\ECond}[2]{\mathbb{E}\!\left[{#1}\middle\vert{#2}\right]}                  % Expectation
+\newcommand{\Var}[1]{\mathrm{Var}\!\left({#1}\right)}             % Variance
+\newcommand{\Cov}[1]{\mathrm{Cov}\!\left({#1}\right)}             % Covariance
+\newcommand{\Corr}[1]{\mathrm{Cor}\!\left({#1}\right)}           % Correlation
+\newcommand{\sd}[1]{\mathrm{SD}\!\left({#1}\right)}               % Standard deviation
+\newcommand{\indep}{\perp\!\!\!\perp}    % Independence symbol
+\newcommand{\Eff}[1]{\mathit{Eff} ({#1})}
+
+%%%% 2. Common Distributions %%%%
+% Discrete
+\newcommand{\Bernoulli}{\mathrm{Bern}}  % Bernoulli(p)
+\newcommand{\Binomial}{\mathrm{Bin}}    % Binomial(n, p)
+\newcommand{\Geometric}{\mathrm{Geo}}  % Geometric(p)
+\newcommand{\Poisson}{\mathrm{Poi}}      % Poisson(lambda)
+% Continuous
+\newcommand{\NormalDist}{\mathcal{N}}            % Normal(mu, sigma^2)
+\newcommand{\ExponentialDist}{\mathrm{Exp}}      % Exponential(lambda)
+\newcommand{\UniformDist}{\mathrm{Uniform}}      % Uniform(a, b)
+\newcommand{\GammaDist}{\mathrm{Gamma}}      % Gamma(alpha, beta)
+\newcommand{\BetaDist}{\mathrm{Beta}}        % Beta(alpha, beta)
+\newcommand{\ChiSqDist}{\chi^2}                  % Chi-squared(k)
+\newcommand{\iid}{\mathrm{iid}}                  % iid
+\newcommand{\iidsim}{\overset{\mathrm{iid}}{\sim}}
+\newcommand{\dconv}{\xrightarrow{\; d\;}}
+\newcommand{\pconv}{\xrightarrow{\; p\;}}
+\newcommand{\pdv}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\odv}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+
+%%%% 3. Common Symbols %%%%
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}        % Absolute value
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}  % Norm
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}  % Ceiling
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor} % Floor
+\newcommand{\set}[1]{\left\{#1\right\}}    % Set notation
+\newcommand{\indic}[1]{\mathbb{I}\left\{#1\right\}} % Indicator
+\newcommand{\mean}[1]{\overline{#1}}    % Sample mean
+\newcommand{\sumrv}[1]{\dot{#1}}        % Sum of samples
+\newcommand{\bias}[1]{\operatorname{B}\!\left({#1}\right)}
+\newcommand{\mse}[1]{\operatorname{MSE}\!\left({#1}\right)}
+
+%%%% 4. Vectors, Bold Symbols %%%%
+\usepackage{bm}                                % bold math (vectors)
+\newcommand{\vec}[1]{\bm{#1}}                   % vector: \v{x} for bold x
+%%%% \newcommand{\mat}[1]{\mathbf{#1}}            % matrix: \mat{A} for bold upright A
+\newcommand{\trans}[1]{{#1}^\top}              % transpose symbol: A^\trans

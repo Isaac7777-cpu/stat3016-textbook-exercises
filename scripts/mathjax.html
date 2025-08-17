@@ -1,0 +1,20 @@
+<!-- This is what works with MathJax 2.7 (which is ancient but all over the place) -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS",
+      }
+    },
+    tex2jax: {inlineMath: [ ['$','$'], ["\\(","\\)"] ]}
+  });
+</script>
+
+<!-- This is what works with Quarto and MathJax 3+ -->
+<script>
+  MathJax = {
+    tex: {
+      tags: "ams", // should be 'ams', 'none', or 'all'
+    },
+  };
+</script>
