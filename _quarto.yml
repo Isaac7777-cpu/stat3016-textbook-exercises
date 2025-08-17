@@ -18,6 +18,9 @@ website:
     background: dark
     collapse-level: 1
     contents:
+      - section: "chapter-03"
+        contents:
+          - contents/chapter-03/exercises.qmd
   page-footer:
     left: "Copyright 2025, Isaac Leong"
     right:
